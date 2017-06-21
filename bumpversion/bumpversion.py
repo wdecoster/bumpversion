@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 import os
+import sys
 
 versionfile = [os.path.join(root, x) for root, dirs, files in os.walk(os.getcwd()) for x in files if x == "version.py"]
 
@@ -8,4 +9,4 @@ if len(versionfile) == 1:
         version = versionf.read().split("\"")[1]
     os.system("git commit -m 'bumping version to {}' {}".format(version, versionfile[0]))
 else:
-    print("Found multiple occurences of version.py - doing nothing.")
+    sys.exit("Found multiple occurences of version.py - doing nothing.")
