@@ -6,12 +6,12 @@ from os import path
 import pypandoc
 here = path.abspath(path.dirname(__file__))
 
-name = 'bumpversion'
+name = 'bumpversion-simple'
 
 exec(open(path.join(name, 'version.py')).read())
 long_description = pypandoc.convert(path.join(here, 'README.md'), 'rst')
 
-with open(README.rst, 'w') as rst:
+with open("README.rst", 'w') as rst:
     rst.write(long_description[0])
 
 setup(
@@ -19,7 +19,7 @@ setup(
     version=__version__,
     description='Lazily commit the bumped version of a package',
     long_description=long_description,
-    url='https://github.com/wdecoster/NanoPlot',
+    url='https://github.com/wdecoster/bumpversion',
     author='Wouter De Coster',
     author_email='decosterwouter@gmail.com',
     license='MIT',
@@ -36,12 +36,12 @@ setup(
     keywords='package development',
     packages=find_packages(),
     install_requires=[],
-    package_data={'bumpversion': []},
-    package_dir={'bumpversion': 'bumpversion'},
+    package_data={'bumpversion-simple': []},
+    package_dir={'bumpversion-simple': 'bumpversion-simple'},
     include_package_data=True,
     entry_points={
         'console_scripts': [
-            'bumpversion=bumpversion.bumpversion:main',
+            'bumpversion=bumpversion-simple.bumpversion-simple:main',
         ],
     },
 )
