@@ -2,7 +2,7 @@
 import os
 import sys
 
-def main()
+def main():
     versionfile = [os.path.join(root, x) for root, dirs, files in os.walk(os.getcwd()) for x in files if x == "version.py"]
     if len(versionfile) == 1:
         with open(versionfile[0]) as versionf:
