@@ -6,7 +6,7 @@ from os import path
 import pypandoc
 here = path.abspath(path.dirname(__file__))
 
-name = 'bumpversion-simple'
+name = 'bumpversionsimple'
 
 exec(open(path.join(name, 'version.py')).read())
 long_description = pypandoc.convert(path.join(here, 'README.md'), 'rst')
@@ -36,12 +36,12 @@ setup(
     keywords='package development',
     packages=find_packages(),
     install_requires=[],
-    package_data={'bumpversion-simple': []},
-    package_dir={'bumpversion-simple': 'bumpversion-simple'},
+    package_data={'bumpversionsimple': []},
+    package_dir={'bumpversionsimple': 'bumpversionsimple'},
     include_package_data=True,
     entry_points={
         'console_scripts': [
-            'bumpversion=bumpversion-simple.bumpversion-simple:main',
+            'bumpversion=bumpversionsimple.bumpversionsimple:main',
         ],
     },
 )
